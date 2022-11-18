@@ -8,11 +8,8 @@ class Session{
         session_start();
 
         if(!isset($_SESSION[$session_name])){
-            $_SESSION[$session_name] = NULL;
-            //echo "Sesión $session_name creada";
-        }
-        //echo "Sesión $session_name ya existe";
-        
+            $_SESSION[$session_name] = NULL;            
+        }                
         $this->session = $session_name;
     }
 

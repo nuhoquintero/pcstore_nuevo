@@ -57,7 +57,7 @@ main{
     padding: 5px 0;
 }
 .articulo .imagen img{
-    height: 200px;
+    height:200px ;
 }
 
 .articulo .titulo{
@@ -91,7 +91,7 @@ button{
 
 #tabla .fila .imagen{
     display: inline-block;
-    width: 100px;
+    width: 50px;
 }
 #tabla .fila .info{
     box-sizing: border-box;

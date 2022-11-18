@@ -30,26 +30,28 @@ bCarrito.addEventListener('click', (e) =>{
 });
 
 function actualizarCarritoUI(){
-    fetch('http://localhost/curso/49.%20carrito/terminado/api/carrito/api-carrito.php?action=mostrar')
-    .then(response =>{
-        return response.json();
-    })
-    .then(data =>{
-        console.log(data);
-        let tablaCont = document.querySelector('#tabla');
+    fetch('http://localhost/pcstore_nuevo/pcstorenuevo/api/carrito/api-carrito.php?action=mostrar')
+    .then(response =>{ return response.json(); })
+    .then(data =>{ console.log(data); let tablaCont = document.querySelector('#tabla');
         let precioTotal = '';
-        let html = ``;
-        data.items.forEach(element => {
-            html += `
+        let html = '';
+
+        data.items.forEach(element => { html += `
                 <div class='fila'>
                     <div class='imagen'><img src='img/${element.imagen}' width='100' /></div>
-                    <div class='info'>
+
+                    <div class='info'>                    
                         <input type='hidden' value='${element.id}' />
-                        <div class='nombre'>${element.nombre}</div>
+
+                        <div class='name'>${element.nombre}</div>
+                        
                         <div>${element.cantidad} items de $${element.precio}</div>
+                        
                         <div>Subtotal: $${element.subtotal}</div>
+                        
                         <div class='botones'><button class='btn-remove'>Quitar 1 del carrito</button></div>
                     </div>
+
                 </div>
             `;
         });
@@ -80,7 +82,7 @@ botones.forEach(boton => {
 });
 
 const addItemToCarrito = id =>{
-    fetch('http://localhost/curso/49.%20carrito/terminado/api/carrito/api-carrito.php?action=add&id=' + id)
+    fetch('http://localhost/pcstore_nuevo/pcstorenuevo/api/carrito/api-carrito.php?action=add&id=' + id)
     .then(response =>{
         return response.text();
     })
@@ -90,7 +92,7 @@ const addItemToCarrito = id =>{
 };
 
 const removeItemFromCarrito = id =>{
-    fetch('http://localhost/curso/49.%20carrito/terminado/api/carrito/api-carrito.php?action=remove&id=' + id)
+    fetch('http://localhost/pcstore_nuevo/pcstorenuevo/api/carrito/api-carrito.php?action=remove&id=' + id)
     .then(res =>{
         return res.json();
     })

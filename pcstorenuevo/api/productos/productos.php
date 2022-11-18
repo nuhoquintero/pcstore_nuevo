@@ -9,7 +9,7 @@ class Productos extends DB{
 
     public function get($id){
         $query = $this->connect()->prepare('SELECT * FROM stock WHERE id = :id LIMIT 0,12');
-        $query->exec(['id' => $id]);
+        $query->execute(['id' => $id]);
 
         $row = $query->fetch();
 

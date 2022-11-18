@@ -32,16 +32,15 @@ function mostrar($carrito){
     $total = 0;
     $totalItems = 0;
     foreach($itemsCarrito as $itemCarrito){
-        $httpRequest = file_get_contents('http://localhost/pcstore_nuevo/pcstorenuevo/api/productos/api-productos.php?get-stock=' . $itemCarrito['id']); 
-        $itemProducto = json_decode($httpRequest, 1)['item'];
+        $httpRequest = file_get_contents('http://localhost/pcstore_nuevo/pcstorenuevo/api/productos/api-producto.php?get-item=' . $itemCarrito['id']); 
+        $itemProducto = json_decode($httpRequest, 1)['item'];        
         $itemProducto['cantidad'] = $itemCarrito['cantidad'];
         $itemProducto['subtotal'] = $itemProducto['cantidad'] * $itemProducto['precio'];
         $total += $itemProducto['subtotal'];
         $totalItems += $itemProducto['cantidad'];
         array_push($fullItems, $itemProducto);
     }
-    $resArray = array('info' => ['count' => $totalItems, 'total' => $total] ,'items' => $fullItems);
-    //array_push($fullItems, ['count' => $totalItems, 'total' => $total]);
+    $resArray = array('info' => ['count' => $totalItems, 'total' => $total] ,'items' => $fullItems);    
     echo json_encode($resArray);
 }
 
@@ -50,7 +49,7 @@ function add($carrito){
         $res = $carrito->add($_GET['id']);
         echo $res;
     }else{
-        // error
+        
     }
 }
 
