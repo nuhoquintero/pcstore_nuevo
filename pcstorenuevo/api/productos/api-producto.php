@@ -10,9 +10,9 @@ if(isset($_GET['categoria'])){
                             'response' => 'No existe la categor&iacute;a']);    
     }else{
         $productos = new Productos();
-        $items = $productos->getItemsByCategory($categoria);
+        $item = $productos->getItemsByCategory($categoria);
         echo json_encode(['statuscode' => 200, 
-                        'items' => $items]);
+                        'items' => $item]);
     }
 }else if(isset($_GET['get-item'])){
     $id = $_GET['get-item'];

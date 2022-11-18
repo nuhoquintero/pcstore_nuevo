@@ -1,0 +1,61 @@
+body{
+    
+    
+      font-family: arial;
+      flex-wrap: wrap;
+      
+       }
+    #tituloprincipal{
+      color: rgb(0, 0, 0);
+      }
+  h2,h3 {
+      color:#000000;
+      font-family: Verdana;
+  }
+  .flex-container {
+display: inline-flex;
+border-right: 2px solid rgb(155, 155, 155);
+flex-wrap: wrap;
+}
+
+.flex-container > div {
+background-color: #ffffff;
+border-top: 2px solid rgb(155, 155, 155); 
+
+
+
+padding: 20px;
+flex-wrap: wrap;
+max-width: 1500px;
+position: relative;
+}
+.container {
+margin-left: auto;
+margin-right: auto;
+border-left: 2px solid rgb(155, 155, 155);
+border-right: 2px solid rgb(155, 155, 155);
+border-bottom: 2px solid rgb(155, 155, 155);
+padding: 40px;
+flex-wrap: wrap;
+max-width: 1000px;
+position: relative;
+}
+.containerfoto{
+height: 400px;
+width: 439px;
+border-left: 2px solid rgb(155, 155, 155);
+
+}
+
+
+  .btn{
+  margin-bottom: 20px;
+  padding: 20px; width: 300px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: rgb(255, 255, 255); 
+  background-color: rgb(114, 199, 75);
+  height: auto;
+  } 
